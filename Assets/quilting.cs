@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Quilting;
 using UnityEngine;
-using KModkit;
-using System.Text.RegularExpressions;
+
 using rnd = UnityEngine.Random;
 
 public class quilting : MonoBehaviour
@@ -38,40 +38,39 @@ public class quilting : MonoBehaviour
     private void Start()
     {
         puzzleIndex = rnd.Range(0, 5);
-        buttonOrder = Enumerable.Range(0, 4).Select(x => (QColor)x).ToList().Shuffle().ToArray();
+        buttonOrder = Enumerable.Range(0, 4).Select(x => (QColor) x).ToList().Shuffle().ToArray();
         for (int i = 0; i < 4; i++)
-            buttons[i].GetComponent<Renderer>().material.color = buttonColors[(int)buttonOrder[i]];
-        Debug.LogFormat("[Quilting #{0}] Using puzzle {1}.", moduleId, puzzleIndex + 1);
+            buttons[i].GetComponent<Renderer>().material.color = buttonColors[(int) buttonOrder[i]];
+        Debug.LogFormat("[Quilting #{0}] Using quilt {1}.", moduleId, puzzleIndex + 1);
         Debug.LogFormat("[Quilting #{0}] Button colors: {1}", moduleId, buttonOrder.Join(", "));
 
         GetPatches();
-        var attempts = 1;
-    tryAgain:
-        try
+
+        // Generate random quilt
+        var randomQuilt = FindSolution(Enumerable.Repeat(QColor.notSet, 20).ToArray()).First();
+        var whitePatchIx = rnd.Range(0, 20);
+        var givens = Ut.ReduceRequiredSet(Enumerable.Range(0, patches.Count).Where(ix => ix != whitePatchIx).ToArray().Shuffle(), test: state =>
         {
-            var amounts = new int[] { 5, 5, 5, 5 };
-            for (int i = 0; i < 20; i++)
+            var testQuilt = Enumerable.Repeat(QColor.notSet, 20).ToArray();
+            foreach (var ix in state.SetToTest)
+                testQuilt[ix] = randomQuilt[ix];
+            var whitePatchColor = QColor.notSet;
+            foreach (var solution in FindSolution(testQuilt))
             {
-                patches[i].color = Enumerable.Range(0, 4).Select(x => (QColor)x).Where(x => !patches[i].connections.Any(xx => xx.color == x) && amounts[(int)x] != 0).PickRandom();
-                amounts[(int)patches[i].color]--;
+                if (whitePatchColor == QColor.notSet)
+                    whitePatchColor = solution[whitePatchIx];
+                else if (whitePatchColor != solution[whitePatchIx])
+                    return false;
             }
-            Debug.LogFormat("<Quilting #{0}> Generated a map in {1} attempts.", moduleId, attempts);
-        }
-        catch (InvalidOperationException)
-        {
-            attempts++;
-            goto tryAgain;
-        }
+            return true;
+        }).ToArray();
+
+        Debug.LogFormat("<> {0} ({1})", givens.Join(", "), givens.Length);
+
+
+
+
         whitePatch = patches.PickRandom();
-        givenPatches = patches.Where(x => x.id != whitePatch.id).ToList();
-        // REDUCE
-        foreach (QColor[] foundSolution in Recurse(Enumerable.Repeat(QColor.notSet, 20).ToArray()))
-        {
-            Debug.Log(foundSolution[whitePatch.id].ToString());
-        }
-        displayedPatches = givenPatches.ToList();
-        displayedPatches.Add(whitePatch);
-        displayedPatches.Shuffle();
         solution = whitePatch.color;
         Debug.LogFormat("[Quilting #{0}] The color of the white patch is {1}.", moduleId, solution);
         // DISPLAY PATCHES COROUTINE
@@ -81,6 +80,47 @@ public class quilting : MonoBehaviour
             for (int i = 0; i < 20; i++)
                 Debug.LogFormat("Patch {0}: {1}", patches[i].id, patches[i].color);
         }
+    }
+
+    private IEnumerable<QColor[]> FindSolution(QColor[] sofar)
+    {
+        var bestIx = -1;
+        QColor[] fewestPossibleColors = null;
+        foreach (var i in Enumerable.Range(0, 20).ToArray().Shuffle())
+        {
+            if (sofar[i] != QColor.notSet)
+                continue;
+            var possibleColors = new[] { QColor.red, QColor.yellow, QColor.blue, QColor.green }
+                .Where(c => sofar.Count(sf => sf == c) < 5)
+                .Where(c => !patches[i].connections.Any(p => p.color == c))
+                .ToArray();
+
+            if (fewestPossibleColors == null || possibleColors.Length < fewestPossibleColors.Length)
+            {
+                if (possibleColors.Length == 0)
+                    yield break;
+                bestIx = i;
+                fewestPossibleColors = possibleColors;
+                if (possibleColors.Length == 1)
+                    goto shortcut;
+            }
+        }
+
+        if (bestIx == -1)
+        {
+            yield return sofar.ToArray();
+            yield break;
+        }
+
+        shortcut:
+        fewestPossibleColors.Shuffle();
+        foreach (var color in fewestPossibleColors)
+        {
+            sofar[bestIx] = color;
+            foreach (var solution in FindSolution(sofar))
+                yield return solution;
+        }
+        sofar[bestIx] = QColor.notSet;
     }
 
     private void PressButton(KMSelectable button)
@@ -220,7 +260,7 @@ public class quilting : MonoBehaviour
                 patches[19].connections = new List<patch> { patches[0], patches[18] };
                 break;
             default:
-                throw new System.ArgumentException("puzzleIndex has an invalid value (expected 0-4).");
+                throw new ArgumentException("puzzleIndex has an invalid value (expected 0-4).");
         }
     }
 

@@ -6,7 +6,7 @@ using System.Text;
 
 using Rnd = UnityEngine.Random;
 
-namespace NonbinaryPuzzle
+namespace Quilting
 {
     static class Ut
     {
