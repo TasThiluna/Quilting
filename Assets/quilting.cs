@@ -19,8 +19,8 @@ public class quilting : MonoBehaviour
     private int puzzleIndex;
     private List<patch> patches = new List<patch>();
     private patch whitePatch;
-    private List<patch> displayedPatches = new List<patch>();
-    private List<patch> givenPatches = new List<patch>();
+    private List<int> displayedPatches = new List<int>();
+    private List<int> givenPatches = new List<int>();
     private QColor[] buttonOrder = new QColor[4];
     private QColor solution;
 
@@ -64,15 +64,15 @@ public class quilting : MonoBehaviour
             }
             return true;
         }).ToArray();
-
         Debug.LogFormat("<> {0} ({1})", givens.Join(", "), givens.Length);
+        for (int i = 0; i < 20; i++)
+            patches[i].color = randomQuilt[i];
 
-
-
-
-        whitePatch = patches.PickRandom();
+        whitePatch = patches[whitePatchIx];
         solution = whitePatch.color;
         Debug.LogFormat("[Quilting #{0}] The color of the white patch is {1}.", moduleId, solution);
+        displayedPatches = givenPatches.ToList();
+        displayedPatches.Add(whitePatchIx);
         // DISPLAY PATCHES COROUTINE
         if (Application.isEditor)
         {
@@ -261,29 +261,6 @@ public class quilting : MonoBehaviour
                 break;
             default:
                 throw new ArgumentException("puzzleIndex has an invalid value (expected 0-4).");
-        }
-    }
-
-    private IEnumerable<QColor[]> Recurse(QColor[] sofar)
-    {
-        var bestIx = -1;
-        var mostNeighboringColors = -1;
-        for (int i = 0; i < sofar.Length; i++)
-        {
-            if (sofar[i] != QColor.notSet)
-                continue;
-            var numNeighboringColors = patches[i].connections.Select(x => x.color).Where(x => x != QColor.notSet).Distinct().Count();
-            if (mostNeighboringColors == -1 || numNeighboringColors > mostNeighboringColors)
-            {
-                bestIx = i;
-                mostNeighboringColors = numNeighboringColors;
-            }
-        }
-
-        if (bestIx == -1)
-        {
-            yield return sofar.ToArray();
-            yield break;
         }
     }
 
