@@ -1,16 +1,46 @@
 fileFormatVersion: 2
-guid: 76413c66319531843b717cf987286e9e
+guid: 09c417245bdd69f40b3a4fda49a3d6cd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2100000: defaultMat
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: blade01
+    100002: blade02
+    100004: blade_grp01
+    100006: blade_grp02
+    100008: handle01
+    100010: handle02
+    100012: nut
+    100014: //RootNode
+    100016: screw
+    400000: blade01
+    400002: blade02
+    400004: blade_grp01
+    400006: blade_grp02
+    400008: handle01
+    400010: handle02
+    400012: nut
+    400014: //RootNode
+    400016: screw
+    2100000: lambert1
+    2300000: blade01
+    2300002: blade02
+    2300004: handle01
+    2300006: handle02
+    2300008: nut
+    2300010: screw
+    3300000: blade01
+    3300002: blade02
+    3300004: handle01
+    3300006: handle02
+    3300008: nut
+    3300010: screw
+    4300000: nut
+    4300002: screw
+    4300004: handle01
+    4300006: blade01
+    4300008: handle02
+    4300010: blade02
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +71,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.9
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
@@ -85,7 +115,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

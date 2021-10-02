@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 76413c66319531843b717cf987286e9e
+guid: e68f52d21956e1d46a0ef97b63448f97
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
+    100000: uparrow
     100002: //RootNode
-    400000: default
+    400000: uparrow
     400002: //RootNode
-    2100000: defaultMat
-    2300000: default
-    3300000: default
-    4300000: default
+    2100000: uparrowMat
+    2300000: uparrow
+    3300000: uparrow
+    4300000: uparrow
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,7 +41,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.9
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
