@@ -56,7 +56,6 @@ public class quilting : MonoBehaviour
         allMeshes = new Mesh[][] { puzzle0Meshes, puzzle1Meshes, puzzle2Meshes, puzzle3Meshes, puzzle4Meshes };
 
         puzzleIndex = rnd.Range(0, 5);
-        puzzleIndex = 0; //> TESTING
         buttonOrder = Enumerable.Range(0, 4).Select(x => (QColor)x).ToList().Shuffle().ToArray();
         for (int i = 0; i < 4; i++)
             buttons[i].GetComponent<Renderer>().material.color = buttonColors[(int)buttonOrder[i]];

@@ -127,7 +127,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1357561429507244
 GameObject:
   m_ObjectHideFlags: 1
@@ -1625,7 +1625,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1257097594753536}
-  m_Mesh: {fileID: 4300000, guid: c6f1adea4b9f37448acc3cbcc3c59924, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 30a5524e444867b44afde80f7cac98cf, type: 3}
 --- !u!33 &33873681842566248
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2201,10 +2201,90 @@ MonoBehaviour:
   - {fileID: 4300000, guid: 2c7b47747bcddaf4eae8923e74d72467, type: 3}
   - {fileID: 4300000, guid: 42380cfb1dcea2d4aab05129a7fda413, type: 3}
   - {fileID: 4300000, guid: 96e808fe0a51e1841bdff49cd7d06803, type: 3}
-  puzzle1Meshes: []
-  puzzle2Meshes: []
-  puzzle3Meshes: []
-  puzzle4Meshes: []
+  puzzle1Meshes:
+  - {fileID: 4300000, guid: b0e18dc6ec4ed81488c8958ff147fe89, type: 3}
+  - {fileID: 4300000, guid: 7b71a65f51daa0f4eb3e13ffd40d94a9, type: 3}
+  - {fileID: 4300000, guid: b7ee770f45037ce4fbb3e3fa8872528f, type: 3}
+  - {fileID: 4300000, guid: 76413c66319531843b717cf987286e9e, type: 3}
+  - {fileID: 4300000, guid: 827787ad95980bc42b503ea3301732c3, type: 3}
+  - {fileID: 4300000, guid: 94369c4a1fda3984ea4ee021b1fa7301, type: 3}
+  - {fileID: 4300000, guid: 069182515ea82ac4997415cc12cedc83, type: 3}
+  - {fileID: 4300000, guid: 0d7a9432930567b4fb624db4e3205849, type: 3}
+  - {fileID: 4300000, guid: d7e8f9ff63931334bbd9e5198464d4f3, type: 3}
+  - {fileID: 4300000, guid: 3003cda2a0c363d4d9eb203930aca5ce, type: 3}
+  - {fileID: 4300000, guid: abd9479bdd021fc43ae76212329f830f, type: 3}
+  - {fileID: 4300000, guid: 87ed6316aae8c4c499a128ccb4155c16, type: 3}
+  - {fileID: 4300000, guid: 372c4746796c1db4a89dbdbac082d20a, type: 3}
+  - {fileID: 4300000, guid: c6ebd7372c633d640a1e3ae3a0d3739c, type: 3}
+  - {fileID: 4300000, guid: 77df54cd693f5b14e81cd98adbfbb3f4, type: 3}
+  - {fileID: 4300000, guid: a9452a72cfccfca4a9f01af2edc89af4, type: 3}
+  - {fileID: 4300000, guid: dcbb7e05654204b45abe1ce635cf0c66, type: 3}
+  - {fileID: 4300000, guid: 6e0ccb57351f4f247b947f4d09bce1ba, type: 3}
+  - {fileID: 4300000, guid: 29ca6bb135475474095b2567e7d66f9a, type: 3}
+  - {fileID: 4300000, guid: 074d10b84f993884bb271dc2ee91625e, type: 3}
+  puzzle2Meshes:
+  - {fileID: 4300000, guid: a384f0d88965ab44ab4c4199f8ce539f, type: 3}
+  - {fileID: 4300000, guid: 157d9996cda64f74e8740807f4bf4e9a, type: 3}
+  - {fileID: 4300000, guid: 3bdb0489705fe9c4092495e188c9aa85, type: 3}
+  - {fileID: 4300000, guid: d38d19224370a124385119985b801334, type: 3}
+  - {fileID: 4300000, guid: cbb8d41b49af6154e8c46f1284720062, type: 3}
+  - {fileID: 4300000, guid: e86fcbc846f0eab49baf8081681dcdf6, type: 3}
+  - {fileID: 4300000, guid: 6e4645fe828850f4aa01697272530de3, type: 3}
+  - {fileID: 4300000, guid: 91f538d8d6662af4daea5987efb97674, type: 3}
+  - {fileID: 4300000, guid: 59b30bd7ae9643443911333e8e71f2a0, type: 3}
+  - {fileID: 4300000, guid: 06d863601fb6a4f4daef22ae1f3edd3c, type: 3}
+  - {fileID: 4300000, guid: 3df9336256cd4ef4aa1e3fe89b95871c, type: 3}
+  - {fileID: 4300000, guid: a66dfa50a05139e45854c28f4ad365ba, type: 3}
+  - {fileID: 4300000, guid: ec0fd42d325e81748871d597d3383a1a, type: 3}
+  - {fileID: 4300000, guid: efd7436118d7d9c4bb1ab69d9768c5a7, type: 3}
+  - {fileID: 4300000, guid: a74a7598760f6414ba320f6f31aafd80, type: 3}
+  - {fileID: 4300000, guid: 4821d44d27893e246857497469b5c4aa, type: 3}
+  - {fileID: 4300000, guid: c9aaadf1a3d2c464095cffa7e7c727e2, type: 3}
+  - {fileID: 4300000, guid: 2c367ae4dc2b4a34d9c94a812abe8ab4, type: 3}
+  - {fileID: 4300000, guid: 74ae3598ad2784d4aa1a595db99a0230, type: 3}
+  - {fileID: 4300000, guid: 484b98f471dbb0d41934bef789f7a457, type: 3}
+  puzzle3Meshes:
+  - {fileID: 4300000, guid: e045c60fa2bfb7348a984266ea63149e, type: 3}
+  - {fileID: 4300000, guid: 856a0dda877a19f41ad2666a4915d127, type: 3}
+  - {fileID: 4300000, guid: e402d8a534e7f0344958e2a9c9db9071, type: 3}
+  - {fileID: 4300000, guid: 483f5ee4d28ccef42837c0de4e1eade9, type: 3}
+  - {fileID: 4300000, guid: be8e247a53b68724398d54fc7674a577, type: 3}
+  - {fileID: 4300000, guid: a2ba61aea8c2aeb4bb0a86a088282c7d, type: 3}
+  - {fileID: 4300000, guid: 4cba0cce2ff233a4abed11695eb28b21, type: 3}
+  - {fileID: 4300000, guid: e2b50498794e4ac4cb1ce58746182993, type: 3}
+  - {fileID: 4300000, guid: ff71e3ad6366b224e9b055ac4f0c1447, type: 3}
+  - {fileID: 4300000, guid: 75d37fce1c116b24b80875f6838b583b, type: 3}
+  - {fileID: 4300000, guid: 027e14e212f3c8e4c929bfa16646b9de, type: 3}
+  - {fileID: 4300000, guid: 2a26410e803e72447b9bfb23c8ee2cf6, type: 3}
+  - {fileID: 4300000, guid: 352f685eeace6234aad769187292506d, type: 3}
+  - {fileID: 4300000, guid: d2c4af3a4d06ae94cb11115a8d7d2bdf, type: 3}
+  - {fileID: 4300000, guid: ba6b09f34aa44594fbb9996b20baf67c, type: 3}
+  - {fileID: 4300000, guid: 3be376db0416ba74c8becde12a2c1c5b, type: 3}
+  - {fileID: 4300000, guid: 5eaa30b8d21dd054b9423c70996d68d7, type: 3}
+  - {fileID: 4300000, guid: 3e533ff70a8fa10488e41fb544362be7, type: 3}
+  - {fileID: 4300000, guid: 7840f3242f268b246840f19de7c1e5d4, type: 3}
+  - {fileID: 4300000, guid: c644e426cd3b6ff4d8cfaca74b8c53c6, type: 3}
+  puzzle4Meshes:
+  - {fileID: 4300000, guid: c6f1adea4b9f37448acc3cbcc3c59924, type: 3}
+  - {fileID: 4300000, guid: ccdfe2d5de4a3e7488d370952a1f15da, type: 3}
+  - {fileID: 4300000, guid: e551df55eadf65740bec1653ad679e2d, type: 3}
+  - {fileID: 4300000, guid: 91ddd80a5d75dc240850cdb4052f010b, type: 3}
+  - {fileID: 4300000, guid: f01e90d2b8faefb419372bb56a8521cc, type: 3}
+  - {fileID: 4300000, guid: b72db7c84ee5433489c5251a32618753, type: 3}
+  - {fileID: 4300000, guid: 39f9aa32fa5e55e428c915d07df49744, type: 3}
+  - {fileID: 4300000, guid: e463af88f13b7fc4db01e08378aa8132, type: 3}
+  - {fileID: 4300000, guid: a8dd2091e6eb13a4f81ca47edceb9726, type: 3}
+  - {fileID: 4300000, guid: 55302adb02abc994c8d3f502364e60df, type: 3}
+  - {fileID: 4300000, guid: d62e54b64c711674eb2616bbd8eae884, type: 3}
+  - {fileID: 4300000, guid: 4a8d2ed725ae7f149a3cb8e8b398d76b, type: 3}
+  - {fileID: 4300000, guid: bd1eff3bc54ab574cb317cf290139b5f, type: 3}
+  - {fileID: 4300000, guid: f05426b8600360f46ad1b8c4f0a6abb6, type: 3}
+  - {fileID: 4300000, guid: 99eb136acc7742b44a69363b41c5d875, type: 3}
+  - {fileID: 4300000, guid: fc4054171c3ad3743990f29a611f5acd, type: 3}
+  - {fileID: 4300000, guid: 4a787ea2509262042b1fe2431887e27c, type: 3}
+  - {fileID: 4300000, guid: 1bc8609ef22b9ac4cb8ec2205044a2bf, type: 3}
+  - {fileID: 4300000, guid: 34f99f9db26c89642ab111db5436c001, type: 3}
+  - {fileID: 4300000, guid: 30a5524e444867b44afde80f7cac98cf, type: 3}
 --- !u!114 &114976938954519896
 MonoBehaviour:
   m_ObjectHideFlags: 1
