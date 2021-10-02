@@ -73,23 +73,15 @@ public class quilting : MonoBehaviour
             var testQuilt = Enumerable.Repeat(QColor.notSet, 20).ToArray();
             foreach (var ix in state.SetToTest)
                 testQuilt[ix] = randomQuilt[ix];
-            var whitePatchColor = QColor.notSet;
-            foreach (var solution in FindSolution(testQuilt))
-            {
-                if (whitePatchColor == QColor.notSet)
-                    whitePatchColor = solution[whitePatchIx];
-                else if (whitePatchColor != solution[whitePatchIx])
-                    return false;
-            }
-            return true;
+            return !FindSolution(testQuilt).Skip(1).Any();
         }).ToArray();
-        Debug.LogFormat("<> {0} ({1})", givens.Join(", "), givens.Length);
         for (int i = 0; i < 20; i++)
             patches[i].color = randomQuilt[i];
 
         whitePatch = patches[whitePatchIx];
         solution = whitePatch.color;
-        Debug.LogFormat("[Quilting #{0}] The color of the white patch is {1}.", moduleId, solution);
+        Debug.LogFormat("[Quilting #{0}] Givens: {1}", moduleId, givens.Select(g => string.Format("{0}={1}", g, patches[g].color)).JoinString(", "));
+        Debug.LogFormat("[Quilting #{0}] The color of the white patch ({2}) is {1}.", moduleId, solution, whitePatch.id);
         displayedPatches = givens.ToList();
         displayedPatches.Add(whitePatchIx);
         displayedPatches.Shuffle();
@@ -111,7 +103,7 @@ public class quilting : MonoBehaviour
                 continue;
             var possibleColors = new[] { QColor.red, QColor.yellow, QColor.blue, QColor.green }
                 .Where(c => sofar.Count(sf => sf == c) < 5)
-                .Where(c => !patches[i].connections.Any(p => p.color == c))
+                .Where(c => !patches[i].connections.Any(p => sofar[p.id] == c))
                 .ToArray();
 
             if (fewestPossibleColors == null || possibleColors.Length < fewestPossibleColors.Length)
