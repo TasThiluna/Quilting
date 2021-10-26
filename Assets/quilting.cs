@@ -272,7 +272,7 @@ public class quilting : MonoBehaviour
                 patches[9].connections = new List<patch> { patches[8], patches[14], patches[18] };
                 patches[10].connections = new List<patch> { patches[2], patches[6], patches[11], patches[12] };
                 patches[11].connections = new List<patch> { patches[7], patches[10], patches[12] };
-                patches[12].connections = new List<patch> { patches[8], patches[11], patches[13], patches[15], patches[17] };
+                patches[12].connections = new List<patch> { patches[8], patches[10], patches[11], patches[13], patches[15], patches[17] };
                 patches[13].connections = new List<patch> { patches[12], patches[15], patches[16] };
                 patches[14].connections = new List<patch> { patches[9], patches[15], patches[18] };
                 patches[15].connections = new List<patch> { patches[8], patches[12], patches[13], patches[14], patches[16], patches[17] };

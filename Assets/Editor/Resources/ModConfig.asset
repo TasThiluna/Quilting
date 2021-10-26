@@ -18,6 +18,6 @@ MonoBehaviour:
 
 
     Module idea by Moon, implementation by Timwi and TasThing.'
-  version: 1.0
+  version: 1.0.1
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 57d3898d127dc7542a7c9fd3b57aabfe, type: 3}
