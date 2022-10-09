@@ -15,8 +15,8 @@ MonoBehaviour:
   title: Quilting
   author: TasThing
   description: "Maybe you should quilt while you're ahead...\r\n\r\nModule idea by
-    Moon, implementation by Timwi and TasThing.\r\n\r\n[url=https://ktane.timwi.de/HTML/Quilting.html]Manual
+    Moon, implementation by Timwi and TasThiluna.\r\n\r\n[url=https://ktane.timwi.de/HTML/Quilting.html]Manual
     HTML[/url]\r\n[url=https://ktane.timwi.de/PDF/Quilting.pdf]Manual PDF[/url]"
-  version: 1.0.1
+  version: 1.0.2
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 57d3898d127dc7542a7c9fd3b57aabfe, type: 3}
