@@ -13,9 +13,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: quilting
   title: Quilting
-  author: TasThing
+  author: TasThiluna
   description: "Maybe you should quilt while you're ahead...\r\n\r\nModule idea by
-    Moon, implementation by Timwi and TasThiluna.\r\n\r\n[url=https://ktane.timwi.de/HTML/Quilting.html]Manual
+    Moon, implementation by Tasthiluna and Timwi.\n\r\n[url=https://ktane.timwi.de/HTML/Quilting.html]Manual
     HTML[/url]\r\n[url=https://ktane.timwi.de/PDF/Quilting.pdf]Manual PDF[/url]"
   version: 1.0.2
   outputFolder: build

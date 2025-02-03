@@ -84,12 +84,8 @@ public class quilting : MonoBehaviour
         displayedPatches = givens.ToList();
         displayedPatches.Add(whitePatchIx);
         displayedPatches.Shuffle();
-        if (Application.isEditor && false)
-        {
-            Debug.LogFormat("ID {0}", whitePatch.id);
-            for (int i = 0; i < 20; i++)
-                Debug.LogFormat("Patch {0}: {1}", patches[i].id, patches[i].color);
-        }
+        for (int i = 0; i < 20; i++)
+            Debug.LogFormat("[Quilting #{0}] Patch {1}: {2}", moduleId, patches[i].id, patches[i].color);
     }
 
     private IEnumerable<QColor[]> FindSolution(QColor[] sofar)
@@ -275,7 +271,7 @@ public class quilting : MonoBehaviour
                 patches[12].connections = new List<patch> { patches[8], patches[10], patches[11], patches[13], patches[15], patches[17] };
                 patches[13].connections = new List<patch> { patches[12], patches[15], patches[16] };
                 patches[14].connections = new List<patch> { patches[9], patches[15], patches[18] };
-                patches[15].connections = new List<patch> { patches[8], patches[12], patches[13], patches[14], patches[16], patches[17] };
+                patches[15].connections = new List<patch> { patches[8], patches[12], patches[13], patches[14], patches[16], patches[17], patches[19] };
                 patches[16].connections = new List<patch> { patches[13], patches[15] };
                 patches[17].connections = new List<patch> { patches[12], patches[15], patches[19] };
                 patches[18].connections = new List<patch> { patches[9], patches[14], patches[19] };
